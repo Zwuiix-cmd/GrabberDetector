@@ -1,0 +1,7 @@
+{
+ "Name": "Grabber Detector",
+ "Description": "Grabber and Stealer Detector",
+ "Copyright": "Copyright © 2023 @Zwuiix-cmd",
+ "Version": "1.0.0",
+ "IconPath": "resources/icon.ico"
+}
