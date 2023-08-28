@@ -30,9 +30,8 @@ Require [Wincap](https://www.winpcap.org/install/)
 - Step 1: Download [Golang](https://go.dev/doc/install)
 - Step 2: Download [Garble](https://github.com/burrowers/garble)
 - Step 3: Download [rsrc](https://github.com/akavel/rsrc)
-- Step 4: `rsrc -ico resources/icon.ico`
-- Step 5: `.\build.ps1`
-- Step 6: `Start GrabberDetector.exe`
+- Step 4: `go build -o "Grabber Detector.exe"`
+- Step 5: `Start GrabberDetector.exe`
 
 Or download the already compiled in the Releases section
 ## Authors

@@ -59,6 +59,7 @@ func main() {
 	} else if answer == "4" {
 		startupFolder := filepath.Join("C:\\Users\\" + os.Getenv("username") + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup")
 		desktopFolder := filepath.Join("C:\\Users\\" + os.Getenv("username") + "\\Desktop")
+		startMenuFolder := filepath.Join("C:\\Users\\" + os.Getenv("username") + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs")
 		path := filepath.Join("C:\\Program Files\\Grabber Detector")
 
 		currentExePath, err := os.Executable()
@@ -93,15 +94,22 @@ func main() {
 			Zwuiix.WaitForInterrupt()
 			return
 		}
-		linkPath := filepath.Join(startupFolder, "GrabberDetector.lnk")
+		linkPath := filepath.Join(startupFolder, "Grabber Detector.lnk")
 		if err := Zwuiix.CreateShortcut(linkPath, newExePath, "Grabber and Stealer Detector", "-startup"); err != nil {
 			fmt.Println("Error creating shortcut:", err)
 			Zwuiix.WaitForInterrupt()
 			return
 		}
 
-		desktopPath := filepath.Join(desktopFolder, "GrabberDetector.lnk")
+		desktopPath := filepath.Join(desktopFolder, "Grabber Detector.lnk")
 		if err := Zwuiix.CreateShortcut(desktopPath, newExePath, "Grabber and Stealer Detector"); err != nil {
+			fmt.Println("Error creating shortcut:", err)
+			Zwuiix.WaitForInterrupt()
+			return
+		}
+
+		startMenuPath := filepath.Join(startMenuFolder, "Grabber Detector.lnk")
+		if err := Zwuiix.CreateShortcut(startMenuPath, newExePath, "Grabber and Stealer Detector"); err != nil {
 			fmt.Println("Error creating shortcut:", err)
 			Zwuiix.WaitForInterrupt()
 			return
